@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta viewport="width=device-width, initial-scale=1.0" />
+  <title>Linktree | HANSZ</title>
+  <style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+
+  body {
+    background: linear-gradient(135deg, #0a0f24, #1a0551);
+    color: white;
+    min-height: 100vh;
+    padding-bottom: 80px;
+    overflow-x: hidden;
+  }
+
+  /* Loader */
+  #loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    animation: fadeOut 1.2s ease forwards;
+    animation-delay: 1.5s;
+  }
+
+  .spinner {
+    width: 60px;
+    height: 60px;
+    border: 6px solid rgba(255, 255, 255, 0.2);
+    border-top: 6px solid #00eaff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin { to { transform: rotate(360deg); } }
+  @keyframes fadeOut { to { opacity: 0; visibility: hidden; } }
+
+  /* Container */
+  .wrapper {
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+    padding: 30px 20px;
+    padding-top: 100px;
+  }
+
+  .card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 35px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 0 5px #ff0000, 0 0 10px #ff7a00, 0 0 15px #ffee00,
+                0 0 20px #00ff0d, 0 0 25px #00c8ff, 0 0 30px #7a00ff,
+                0 0 35px #ff00d4;
+    animation: glow 4s linear infinite;
+  }
+
+  .profile {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #00eaff;
+    box-shadow: 0 0 15px #00eaff;
+    display: block;
+    margin: 0 auto 20px auto;
+  }
+
+  h2 {
+    margin-bottom: 25px;
+    font-size: 26px;
+    text-shadow: 0 0 10px #00eaff;
+  }
+
+  /* FIX ICON RAPIH */
+  .icon {
+    width: 26px !important;
+    height: 26px !important;
+    object-fit: contain;
+    display: block;
+  }
+
+  .link-btn i {
+    width: 26px;
+    height: 26px;
+    font-size: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Button */
+  .link-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    margin: 12px 0;
+    padding: 16px;
+    border-radius: 15px;
+    background: rgba(0, 255, 255, 0.18);
+    border: 2px solid #00eaff;
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+    backdrop-filter: blur(8px);
+    transition: 0.3s;
+    overflow: hidden;
+  }
+
+  .link-btn:hover {
+    background: #00eaff;
+    color: #000;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #00eaff;
+  }
+
+  /* Mini Loader */
+  .mini-loader {
+    width: 18px;
+    height: 18px;
+    border: 3px solid rgba(255,255,255,0.3);
+    border-top: 3px solid #00eaff;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+  }
+
+  /* Footer */
+  .footer {
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 30px;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+  }
+
+  .slide-text {
+    display: inline-block;
+    white-space: nowrap;
+    font-size: 14px;
+    color: #fff;
+    animation: slideLeft 12s linear infinite;
+  }
+
+  @keyframes slideLeft {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+
+  /* Responsive */
+  @media (max-width: 480px) {
+    .wrapper { padding-top: 70px; }
+    .card { padding: 25px; }
+    h2 { font-size: 20px; }
+    .link-btn {
+      font-size: 15px;
+      padding: 12px;
+    }
+    .profile {
+      width: 90px;
+      height: 90px;
+    }
+  }
+</style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+<div id="loader">
+  <div class="spinner"></div>
+</div>
+
+<div class="wrapper">
+  <div class="card">
+    <img class="profile" src="img/han.jpeg" alt="Profile" />
+    <h2>HANSZ</h2>
+
+    <a class="link-btn" href="https://discord.gg/XW4AQDpe">
+      <i class="fa-brands fa-discord icon"></i> Discord
+    </a>
+
+    <a class="link-btn" href="https://www.instagram.com/404hn0tf0und/">
+      <i class="fa-brands fa-instagram icon"></i> Instagram
+    </a>
+
+    <a class="link-btn" href="https://github.com/muizfrhan">
+      <i class="fa-brands fa-github icon"></i> Github
+    </a>
+
+    <a class="link-btn" href="https://sociabuzz.com/ranz_kuy7/tribe">
+      <img class="icon" src="https://storage.sociabuzz.com/storage/account/image/logo.png" alt="SociaBuzz">
+      SociaBuzz
+    </a>
+
+    <a class="link-btn" href="https://saweria.co/mfarhanmuizaddin">
+      <img class="icon" src="https://saweria.co/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcapy_happy.603c7293.svg&w=384&q=75" alt="Saweria">
+      Saweria
+    </a>
+
+  </div>
+</div>
+
+<script>
+const buttons = document.querySelectorAll('.link-btn');
+
+// Simpan label asli semua tombol otomatis
+buttons.forEach(btn => { btn.dataset.label = btn.innerHTML; });
+
+buttons.forEach(btn => {
+  btn.addEventListener('click', function(e) {
+    e.preventDefault();
+    const targetURL = btn.getAttribute("href");
+
+    btn.style.transform = "scale(0.9)";
+    setTimeout(() => btn.style.transform = "scale(1)", 150);
+
+    btn.innerHTML = '<span class="mini-loader"></span> Loading...';
+
+    setTimeout(() => {
+      Swal.fire({
+        title: "Menuju Link...",
+        text: "Kamu akan diarahkan!",
+        icon: "info",
+        confirmButtonColor: "#00eaff",
+        background: "#0a0f24",
+        color: "#fff",
+      }).then(() => window.location.href = targetURL);
+
+      setTimeout(() => {
+        btn.innerHTML = btn.dataset.label;
+      }, 1000);
+
+    }, 900);
+  });
+});
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<!-- Footer -->
+<div class="footer">
+  <p class="slide-text" id="footer-text"></p>
+</div>
+
+<script>
+function updateFooter() {
+  const now = new Date();
+  const hari = now.getDate();
+  const bulanIndex = now.getMonth();
+  const tahun = now.getFullYear();
+
+  const namaBulan = [
+    "Januari","Februari","Maret","April","Mei","Juni",
+    "Juli","Agustus","September","Oktober","November","Desember"
+  ];
+
+  const fullDate = `${hari} ${namaBulan[bulanIndex]} ${tahun}`;
+  document.getElementById("footer-text").textContent =
+    `© ${fullDate} by HANSZ — All Rights Reserved`;
+}
+
+updateFooter();
+</script>
+
+</body>
+</html>
